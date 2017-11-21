@@ -3,9 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FirstXamarin"
              x:Class="FirstXamarin.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Rýgr je Gay!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center"  />
+            <Entry Text="I am an Entry" Completed="Entry_Completed" />
+            <Label Text="Test" x:Name="myLabel" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-
+            <Label Text="Test" x:Name="myLabel2" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+	
 </ContentPage>
