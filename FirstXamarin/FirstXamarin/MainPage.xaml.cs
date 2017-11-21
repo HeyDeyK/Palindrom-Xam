@@ -19,7 +19,8 @@ namespace FirstXamarin
         void Entry_Completed(object sender, EventArgs e)
         {
             var text = ((Entry)sender).Text; //cast sender to access the properties of the Entry
-            var vysledek = IsPalindrome(text);
+            string str = text.Replace(" ", "");
+            var vysledek = IsPalindrome(str);
             if(vysledek==true)
             {
                 myLabel.Text = "Je to palindrom";
@@ -34,6 +35,7 @@ namespace FirstXamarin
         bool IsPalindrome(string value)
         {
             int min = 0;
+            bool proved = true;
             int max = value.Length - 1;
             while (true)
             {
@@ -42,16 +44,29 @@ namespace FirstXamarin
                     return true;
                 }
                 char a = value[min];
-                string test1 = a.ToString();
+                char test1 = value[min+1];
                 char b = value[max];
-                if(a.ToString() == "c")
+                char test2 = value[max + -1];
+                if (a.ToString() == "c" && test1.ToString()=="h")
                 {
-                    myLabel2.Text = "Našel jsem c";
+                    if (b.ToString() == "h" && test2.ToString() == "c")
+                    {
+                        proved = false;
+                    }
                 }
-                if (char.ToLower(a) != char.ToLower(b))
+                if(proved)
                 {
-                    return false;
+                    if (char.ToLower(a) != char.ToLower(b))
+                    {
+                        return false;
+                    }
                 }
+                else
+                {
+                    min++;
+                    max--;
+                }
+                
                 min++;
                 max--;
             }

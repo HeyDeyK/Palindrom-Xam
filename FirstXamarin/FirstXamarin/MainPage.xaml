@@ -12,7 +12,7 @@
             <Label Text="Test" x:Name="myLabel" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-            <Label Text="Test" x:Name="myLabel2" 
+            <Label Text="Test" x:Name="myLabel2"
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
         </StackLayout>
